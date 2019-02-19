@@ -52,20 +52,20 @@ kubectl config view
 #### Expose Service:
 kubectl expose deployment hello-node --type="LoadBalancer"
 
-### View Service:
+#### View Service:
 kubectl get service
 
-### Show in browser:
+#### Show in browser:
 minikube service hello-node
 
 #### Scale Up/Down
 kubectl scale deployments/hello-node --replicas=10
 
-### Delete Service and Deployment
+#### Delete Service and Deployment
 kubectl delete service hello-node
 kubectl delete deployment hello-node
 
-Reference:
+#### Reference:
 
 * https://kubernetes.io/docs/tutorials/hello-minikube/
 * https://medium.com/@brianbmathews/getting-started-with-minikube-docker-container-images-for-testing-kubernetes-locally-on-mac-e39adb60bd41
