@@ -1,7 +1,7 @@
-##How to setup a local Kubernets using Minikube
+## How to setup a local Kubernets using Minikube
 
 
-####Setup Minikube
+#### Setup Minikube
 
 1. brew cask install minikube_
 
@@ -14,7 +14,7 @@
 5. minikube dashboard
 
 
-####Create a simple NodeJS app
+#### Create a simple NodeJS app
 
 Server.js:
 
@@ -26,41 +26,41 @@ Server.js:
    };
    var www = http.createServer(handleRequest);
    www.listen(8080);
-   ```
+ ```
    
        
 eval $(minikube docker-env)   - to UNDO: eval $(minikube docker-env -u).
 
 
-####Build container
+#### Build container
 docker build -t hello-node:v1 .
 
 
-####Create a deployment: 
+#### Create a deployment: 
 kubectl run hello-node --image=hello-node:v1 --port=8080 --image-pull-policy=Never
 
-####Show Deployments:
+#### Show Deployments:
 kubectl get deployments
 
-####View Pods:
+#### View Pods:
 kubectl get pods
 
-####View Config:
+#### View Config:
 kubectl config view
 
-####Expose Service:
+#### Expose Service:
 kubectl expose deployment hello-node --type="LoadBalancer"
 
-###View Service:
+### View Service:
 kubectl get service
 
-###Show in browser:
+### Show in browser:
 minikube service hello-node
 
-####Scale Up/Down
+#### Scale Up/Down
 kubectl scale deployments/hello-node --replicas=10
 
-###Delete Service and Deployment
+### Delete Service and Deployment
 kubectl delete service hello-node
 kubectl delete deployment hello-node
 
