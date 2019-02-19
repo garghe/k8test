@@ -3,7 +3,7 @@
 
 #### Setup Minikube
 
-1. brew cask install minikube_
+1. brew cask install minikube
 
 2. brew install kubernetes-cli
 
@@ -29,7 +29,8 @@ Server.js:
  ```
    
        
-eval $(minikube docker-env)   - to UNDO: eval $(minikube docker-env -u).
+eval $(minikube docker-env)
+To undo the above:  eval $(minikube docker-env -u)
 
 
 #### Build container
